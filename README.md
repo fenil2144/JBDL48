@@ -1,10 +1,4 @@
 # JBDL-48
-
-Docker slides : https://docs.google.com/presentation/d/1w4UCwwvQJw9vQe1ssCUPP55TblGOl3WhWrS1Q30kODw/edit#
-
-1. Redis labs / Redis on cloud : https://app.redislabs.com/
-2. Redis university: https://university.redis.com/
-
 Assignments
 
 1. Basic core Java - https://docs.google.com/document/d/1YMig3AVLglOgQVWFmt93ZtdvndiRRfowexAmPpUGeP0/edit
@@ -52,6 +46,9 @@ Redis
 1. Download - https://github.com/microsoftarchive/redis/releases/tag/win-3.2.100 (windows) , https://redis.io/download
 2. Resources - https://redis.io/
 
+1. Redis labs / Redis on cloud : https://app.redislabs.com/
+2. Redis university: https://university.redis.com/
+
 Kafka
 1. Download - https://kafka.apache.org/downloads
 2. Resources - https://kafka.apache.org/quickstart
@@ -60,3 +57,4 @@ Kafka
 Miscellaneous links
 1. Multi Threading - https://www.baeldung.com/java-concurrency
 2. Streams + Lambdas - https://link.medium.com/pwFwKG1Grqb, https://link.medium.com/1tyR6i3Grqb, https://www.youtube.com/watch?v=1OpAgZvYXLQ, https://www.youtube.com/watch?v=F73kB4XZQ4I
+3. Docker slides : https://docs.google.com/presentation/d/1w4UCwwvQJw9vQe1ssCUPP55TblGOl3WhWrS1Q30kODw/edit#
