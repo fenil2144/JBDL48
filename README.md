@@ -2,8 +2,8 @@
 
 Docker slides : https://docs.google.com/presentation/d/1w4UCwwvQJw9vQe1ssCUPP55TblGOl3WhWrS1Q30kODw/edit#
 
-Redis labs / Redis on cloud : https://app.redislabs.com/ 
-Redis university: https://university.redis.com/
+1. Redis labs / Redis on cloud : https://app.redislabs.com/
+2. Redis university: https://university.redis.com/
 
 Assignments
 
