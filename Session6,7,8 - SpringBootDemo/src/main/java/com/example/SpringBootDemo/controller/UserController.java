@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.SpringBootDemo.config.CustomConfig;
 import com.example.SpringBootDemo.model.User;
 import com.example.SpringBootDemo.model.UserCreateRequest;
 import com.example.SpringBootDemo.service.UserService;
@@ -23,6 +24,9 @@ public class UserController {
 	
 	@Autowired
 	private User user;
+	
+	@Autowired
+	private CustomConfig customConfig;
 	
 	@Autowired
 	@Qualifier("userServiceImpl2")
@@ -76,5 +80,18 @@ public class UserController {
 		logger.info("Request Body received with User = "+user1);
 		
 	}
+	
+	@GetMapping("/getTemplate")
+	public void getTemplate() {
+		logger.info("In UserController : {}",customConfig.getTemplate());
+	}
 
+	//RestTemplate@65d57e4e
+	//RestTemplate@65d57e4e
+	
+	//RestTemplate@108a46d6
+	//RestTemplate@108a46d6
+	
+	//RestTemplate@2c2f06f8
+	//RestTemplate@2c733eba
 }
