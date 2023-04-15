@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.SpringBootDemo.dto.BookDto;
 import com.example.SpringBootDemo.model.Book;
 
 @RestController
@@ -30,14 +33,15 @@ public class BookController {
 	// getAllBooks - Get
 	
 	@PostMapping("/book")
-	public String insertBook(@RequestBody Book book) {
+	public ResponseEntity insertBook(@RequestBody Book book) {
 		logger.info(book.toString());
 		if(bookHashMap.containsKey(book.getId())) {
 			logger.error("Book With this ID Already Exist!");
-			return "Book With this ID Already Exist!";
+			return new ResponseEntity("Book With this ID Already Exist!",HttpStatus.BAD_REQUEST);
 		}
 		bookHashMap.put(book.getId(), book);
-		return "Book Inserted Successfully";
+		return new ResponseEntity("Book Inserted Successfully!",HttpStatus.ACCEPTED);
+
 	}
 	
 	@PutMapping("/book")
