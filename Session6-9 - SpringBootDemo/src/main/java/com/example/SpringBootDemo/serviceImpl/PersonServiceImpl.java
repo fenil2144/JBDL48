@@ -26,6 +26,7 @@ public class PersonServiceImpl implements PersonServiceInterf {
 		if(person.getAge() == null) {
 			person.setAge(calculateAgeFromDob(person.getDob()));
 		}
+		personRepository.createPerson(person);
 		
 	}
 
