@@ -4,7 +4,7 @@ spring:
   username: root
   password: root1234
  jpa:
-  hibernate.ddl-auto: update
+  hibernate.ddl-auto: create
   show-sql: true 
   
 server:
@@ -12,4 +12,7 @@ server:
  
 custom_property:
  secret_key: 8ff8fg8erhrhr
+ 
+book:
+ maxAllowedDays: 14
  
