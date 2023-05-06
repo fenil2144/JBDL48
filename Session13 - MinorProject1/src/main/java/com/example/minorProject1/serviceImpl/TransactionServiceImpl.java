@@ -62,7 +62,7 @@ public class TransactionServiceImpl implements TransactionServiceInterf {
 		if(!book.isPresent())
 			throw new TransactionServiceException("Book Not Present in the Library");
 		
-		if(transactionType.equalsIgnoreCase(TransactionType.ISSUE.toString())) {
+		if(TransactionType.valueOf(transactionType).equals(TransactionType.ISSUE)) {
 			if(book.get().getStudent() != null)
 				throw new TransactionServiceException("Book Not Available for Issue");
 			
@@ -87,8 +87,8 @@ public class TransactionServiceImpl implements TransactionServiceInterf {
 				throw new TransactionServiceException("Book Not Issued to the Student");
 			
 			//select top 1 from transaction where book_id=bookId and student_id=studentId and transaction_type=0 order by transaction_date desc;
-			Transaction issueTxn = transactionRepositoryInterf.
-					findTopByBookAndStudentAndTransactionTypeOrderByIdDesc(bookId,studentId,TransactionType.ISSUE);
+			Transaction issueTxn = transactionRepositoryInterf
+	                .findTopByBookAndStudentAndTransactionTypeOrderByIdDesc(book.get(), student.get(), TransactionType.ISSUE);
 			
 			Transaction transaction = Transaction.builder()
 					.externalId(UUID.randomUUID().toString())
