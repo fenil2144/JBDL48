@@ -15,10 +15,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 public class UserCreateRequest {
-	
-	@Autowired
-	PasswordEncoder passwordEncoder;
-	
+
 	@NotBlank
 	private String name;
 	
@@ -34,11 +31,9 @@ public class UserCreateRequest {
 	private String dob;
 	
 	private String country;
-	
-	private String authorities;
-	
-//	@NotBlank
-//	private UserIdentifier userIdentifier;
+		
+	@NotBlank
+	private UserIdentifier userIdentifier;
 	
 	@NotBlank
 	private String identifierValue;
@@ -47,9 +42,9 @@ public class UserCreateRequest {
 		
 		return User.builder()
 				.name(this.name).phoneNumber(this.phoneNumber)
-				.password(passwordEncoder.encode(this.password)).email(this.email).country(this.country)
+				.email(this.email).country(this.country)
 				.dob(this.dob)
-//				.userIdentifier(this.userIdentifier)
+				.userIdentifier(this.userIdentifier)
 				.identifierValue(this.identifierValue).build();
 	}
 

@@ -52,8 +52,8 @@ public class User implements UserDetails,Serializable{
 	
 	private String authorities;
 	
-//	@Enumerated(value = EnumType.STRING)
-//	private UserIdentifier userIdentifier;
+	@Enumerated(value = EnumType.STRING)
+	private UserIdentifier userIdentifier;
 	
 	private String identifierValue;
 	
